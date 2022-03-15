@@ -49,7 +49,6 @@ library(dplyr)
 dailysteps <- dataset %>% 
         group_by(date) %>%
         summarise(dailytotal=sum(steps, na.rm=TRUE))
-##head(dailysteps)
 ```
 Print the table:
 

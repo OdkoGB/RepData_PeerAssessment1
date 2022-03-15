@@ -200,8 +200,7 @@ dataset &lt;- read.csv(&quot;activity.csv&quot;)</code></pre>
 ##     intersect, setdiff, setequal, union</code></pre>
 <pre class="r"><code>dailysteps &lt;- dataset %&gt;% 
         group_by(date) %&gt;%
-        summarise(dailytotal=sum(steps, na.rm=TRUE))
-##head(dailysteps)</code></pre>
+        summarise(dailytotal=sum(steps, na.rm=TRUE))</code></pre>
 <p>Print the table:</p>
 <pre class="r"><code>print(dailysteps)</code></pre>
 <pre><code>## # A tibble: 61 x 2
