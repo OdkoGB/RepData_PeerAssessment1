@@ -31,7 +31,6 @@ Print the table:
 ```{r print, echo=TRUE}
 print(dailysteps)
 ```
-
 2. Histogram of the total number of steps taken per day (mean and median values are reflected as well):
 ```{r histogram, fig.height=4, fig.width=10, echo=TRUE}
 hist(dailysteps$dailytotal,
@@ -44,6 +43,7 @@ abline(v=median(dailysteps$dailytotal),col="red",lwd=4)
 legend("topright", legend=c("mean", "median"),
        col=c("blue", "red"), lty=1:1, cex=0.9)
 ```
+
 
 3. Calculation of the mean and median of the total number of steps taken per day  
 ```{r stats, echo=TRUE}
@@ -68,6 +68,7 @@ plot(intervalsteps$interval, intervalsteps$avgsteps,
      xlab="5-minute interval",
      ylab="Avg number of steps")
 ```
+
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 ```{r maximumsteps, echo=TRUE}
 maxstepsinterval <- intervalsteps %>%
@@ -95,7 +96,7 @@ joined_df <- left_join(dataset, intervalsteps, by = "interval")
 joined_df$steps[is.na(joined_df$steps)] <- joined_df$avgsteps[is.na(joined_df$steps)]
 ```
 
-2. Create a new dataset that is equal to the original dataset but with the missing data filled in:
+3. Create a new dataset that is equal to the original dataset but with the missing data filled in:
 ```{r newdataset, echo=TRUE}
 dataset_nomissing <- joined_df[,1:3]
 ```

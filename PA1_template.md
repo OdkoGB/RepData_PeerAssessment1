@@ -72,7 +72,6 @@ print(dailysteps)
 ## 10 2012-10-10       9900
 ## # ... with 51 more rows
 ```
-
 2. Histogram of the total number of steps taken per day (mean and median values are reflected as well):
 
 ```r
@@ -88,6 +87,7 @@ legend("topright", legend=c("mean", "median"),
 ```
 
 ![](PA1_template_files/figure-html/histogram-1.png)<!-- -->
+
 
 3. Calculation of the mean and median of the total number of steps taken per day  
 
@@ -116,6 +116,7 @@ plot(intervalsteps$interval, intervalsteps$avgsteps,
 ```
 
 ![](PA1_template_files/figure-html/timeseriesplot-1.png)<!-- -->
+
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 ```r
@@ -146,7 +147,7 @@ joined_df <- left_join(dataset, intervalsteps, by = "interval")
 joined_df$steps[is.na(joined_df$steps)] <- joined_df$avgsteps[is.na(joined_df$steps)]
 ```
 
-2. Create a new dataset that is equal to the original dataset but with the missing data filled in:
+3. Create a new dataset that is equal to the original dataset but with the missing data filled in:
 
 ```r
 dataset_nomissing <- joined_df[,1:3]
